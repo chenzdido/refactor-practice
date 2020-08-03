@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Customer {
+	private static final String HEADER_LINE = "Rental Record for %s";
+	private static final String TOTAL_CHARGE_LINE = "Amount owed is %s";
 
 	private String name;
 	private ArrayList<Rental> rentalList = new ArrayList<Rental>();
@@ -24,7 +26,7 @@ public class Customer {
 		double totalAmount = 0;
 		int frequentRenterPoints = 0;
 		Iterator<Rental> rentals = rentalList.iterator();
-		String result = "Rental Record for " + getName() + "\n";
+		String result = HEADER_LINE+ getName() + "\n";
 		while (rentals.hasNext()) {
 			double thisAmount = 0;
 			Rental each = rentals.next();
@@ -61,7 +63,7 @@ public class Customer {
 
 		}
 		// add footer lines
-		result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
+		result += TOTAL_CHARGE_LINE+ String.valueOf(totalAmount) + "\n";
 		result += "You earned " + String.valueOf(frequentRenterPoints)
 				+ " frequent renter points";
 		return result;
