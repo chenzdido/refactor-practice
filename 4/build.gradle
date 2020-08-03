@@ -10,4 +10,7 @@ dependencies {
 repositories {
     jcenter()
 }
+test{
+    useJUitPlatform();
+}
 
