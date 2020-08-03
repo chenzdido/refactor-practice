@@ -7,6 +7,13 @@ public class Direction {
         this.direction = direction;
     }
 
+    /*public class turnRight extend Direction{
+
+    }
+    public class turnLeft extend Direction{
+
+    }*/
+
     public Direction turnRight() {
         switch (direction) {
             case 'N':
